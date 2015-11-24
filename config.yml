@@ -1,0 +1,13 @@
+# bundle_id = "domain.id"
+# path is the relative path to the workflow in the project root
+---
+path: workflow
+domain: xinranliu
+id: alfred2-3ways-encode
+author: xinranliu
+description: 3 ways of encoding include md5 base64 and encodeurl
+name: 3ways-encode
+webaddress: xinranliu.me
+# If you are using Alfred's advanced Dropbox sync, indicate the path shown in
+# Alfred Preferences > Advanced > Syncing:
+dropbox: ~/Dropbox/Alfred

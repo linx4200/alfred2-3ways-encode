@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>xinranliu.alfred2-3ways-encode</string>
+	<key>connections</key>
+	<dict>
+		<key>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>90428DD0-508F-4708-8011-C91F73309EA4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>xinranliu</string>
+	<key>description</key>
+	<string>3 ways of encoding include md5 base64 and encodeurl</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>3ways-encode</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>90428DD0-508F-4708-8011-C91F73309EA4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>encode</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>script</key>
+				<string>/usr/bin/ruby ./encode.rb {query}</string>
+				<key>subtext</key>
+				<string>encode ...</string>
+				<key>title</key>
+				<string>encode ...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>uidata</key>
+	<dict>
+		<key>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>90428DD0-508F-4708-8011-C91F73309EA4</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>xinranliu.me</string>
+</dict>
+</plist>
