@@ -5,7 +5,7 @@ path: workflow
 domain: xinranliu
 id: alfred2-3ways-encode
 author: xinranliu
-description: 3 ways of encoding include md5 base64 and encodeurl
+description: 3 ways of encoding including md5 base64 and encodeurl
 name: 3ways-encode
 webaddress: xinranliu.me
 # If you are using Alfred's advanced Dropbox sync, indicate the path shown in

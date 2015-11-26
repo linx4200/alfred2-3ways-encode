@@ -6,11 +6,11 @@
 	<string>xinranliu.alfred2-3ways-encode</string>
 	<key>connections</key>
 	<dict>
-		<key>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</key>
+		<key>4A01831F-1B72-4FBB-AB73-99B56D9C4CF9</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>90428DD0-508F-4708-8011-C91F73309EA4</string>
+				<string>ED72D351-81B9-496A-A280-156643F736EE</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -37,7 +37,7 @@
 			<key>type</key>
 			<string>alfred.workflow.output.clipboard</string>
 			<key>uid</key>
-			<string>90428DD0-508F-4708-8011-C91F73309EA4</string>
+			<string>ED72D351-81B9-496A-A280-156643F736EE</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -45,7 +45,7 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -58,12 +58,14 @@
 				<integer>0</integer>
 				<key>queuemode</key>
 				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>encoding ...</string>
 				<key>script</key>
 				<string>/usr/bin/ruby ./encode.rb {query}</string>
 				<key>subtext</key>
-				<string>encode ...</string>
+				<string>64 stands for base64, url stands for url</string>
 				<key>title</key>
-				<string>encode ...</string>
+				<string>plz type md5 or 64 or url and the string to encode</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -72,22 +74,22 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</string>
+			<string>4A01831F-1B72-4FBB-AB73-99B56D9C4CF9</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 	</array>
 	<key>uidata</key>
 	<dict>
-		<key>2D3B88CD-6FF4-4226-A2DB-7859CE74FE63</key>
+		<key>4A01831F-1B72-4FBB-AB73-99B56D9C4CF9</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>120</real>
 		</dict>
-		<key>90428DD0-508F-4708-8011-C91F73309EA4</key>
+		<key>ED72D351-81B9-496A-A280-156643F736EE</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>120</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
