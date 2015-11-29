@@ -45,7 +45,7 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>keyword</key>
@@ -63,9 +63,9 @@
 				<key>script</key>
 				<string>/usr/bin/ruby ./encode.rb {query}</string>
 				<key>subtext</key>
-				<string>64 stands for base64, url stands for url</string>
+				<string>md5, base64, url encode, url decode</string>
 				<key>title</key>
-				<string>plz type md5 or 64 or url and the string to encode</string>
+				<string>3 ways to encode</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>

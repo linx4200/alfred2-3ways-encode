@@ -4,34 +4,61 @@
 require 'rubygems' unless defined? Gem # rubygems is only needed in 1.8
 require './bundle/bundler/setup'
 require 'alfred'
+require 'digest/md5'
+require 'base64'
+require 'uri'
+require 'iconv'
 
 class Encode
-  def md5(str)
-    d5 = Digest::MD5.new
-    md5.update str
-    md5.hexdigest
+  def initialize(str)
+    @str = str
   end
+
+  def md5()
+    Digest::MD5.hexdigest(@str)
+  end
+
+  def base64()
+    Base64.encode64(@str)
+  end
+
+  def urlencode()
+    URI.escape(@str)
+  end
+
+  def urldecode()
+    URI.unescape(@str)
+  end
+end
+
+def toUnicode (str)
+  i = 0
+  unicode = ''
+  Iconv.iconv("UNICODEBIG//","UTF-8", str)[0].each_byte { |b|
+    if i % 2 == 0
+      unicode += "&\#x#{b.to_s(16)}"
+    else
+      unicode += "#{b.to_s(16)};"
+    end
+    i += 1
+  }
+  unicode
 end
 
 Alfred.with_friendly_error do |alfred|
   fb = alfred.feedback
 
-  if ARGV.length === 2
-    type = ARGV[0]
-    puts type
-  end
+  str = ARGV[0]
 
-  # if ARGV.length == 0
-  #   # now = gen_now_t
-  #   # fb.add_item(title: now[:second], subtitle: '10位秒级别时间戳')
-  #   # fb.add_item(title: now[:millisecond], subtitle: '13位毫秒级别时间戳')
-  # end
+  encode = Encode.new(str)
 
-  # if ARGV[0] && (ARGV[0].length === 10 || ARGV[0].length === 13)
-  #   args = ARGV[0];
-  #   time = date_formate(parse_time_stamp(args.to_s))
-  #   fb.add_item(title: time, subtitle: '解析时间戳')
-  # end
+  fb.add_item(title: encode.md5, subtitle: 'md5')
+  fb.add_item(title: encode.base64, subtitle: 'base64')
+  fb.add_item(title: encode.urlencode, subtitle: 'url encode')
 
-  puts fb.to_alfred
+  # TODO arg是中文 alfred 不支持
+  # fb.add_item(title: encode.urldecode, subtitle: "url decode", arg: toUnicode(encode.urldecode))
+
+  puts fb.to_alfred()
+
 end
