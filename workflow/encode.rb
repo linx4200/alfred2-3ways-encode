@@ -52,11 +52,12 @@ Alfred.with_friendly_error do |alfred|
 
   encode = Encode.new(str)
 
-  fb.add_item(title: encode.md5, subtitle: 'md5')
+  fb.add_item(title: encode.md5, subtitle: 'md5 (32位小写)')
+  fb.add_item(title: encode.md5.upcase!, subtitle: 'md5 (32位大写)')
   fb.add_item(title: encode.base64, subtitle: 'base64')
   fb.add_item(title: encode.urlencode, subtitle: 'url encode')
 
-  # TODO arg是中文 alfred 不支持
+  # TODO xml的arg如果是中文,alfred不支持
   # fb.add_item(title: encode.urldecode, subtitle: "url decode", arg: toUnicode(encode.urldecode))
 
   puts fb.to_alfred()
