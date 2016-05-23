@@ -18,8 +18,12 @@ class Encode
     Digest::MD5.hexdigest(@str)
   end
 
-  def base64()
+  def base64_encode()
     Base64.encode64(@str)
+  end
+
+  def base64_decode()
+    Base64.decode64(@str)
   end
 
   def urlencode()
@@ -54,11 +58,12 @@ Alfred.with_friendly_error do |alfred|
 
   fb.add_item(title: encode.md5, subtitle: 'md5 (32位小写)')
   fb.add_item(title: encode.md5.upcase!, subtitle: 'md5 (32位大写)')
-  fb.add_item(title: encode.base64, subtitle: 'base64')
+  fb.add_item(title: encode.base64_encode, subtitle: 'base64 encode')
+  fb.add_item(title: encode.base64_decode, subtitle: 'base64 decode')
   fb.add_item(title: encode.urlencode, subtitle: 'url encode')
 
   # TODO xml的arg如果是中文,alfred不支持
-  # fb.add_item(title: encode.urldecode, subtitle: "url decode", arg: toUnicode(encode.urldecode))
+  fb.add_item(title: encode.urldecode, subtitle: "url decode", arg: toUnicode(encode.urldecode))
 
   puts fb.to_alfred()
 
